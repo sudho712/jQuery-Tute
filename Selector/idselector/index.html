@@ -4,12 +4,16 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-  $("button").click(function(){
-    $("#test").hide();
+  $("#hide").click(function(){
+    $("#test").hide();  // Hide the first paragraph
+    $("#test1").show(); // Show the second paragraph
+
+
   });
 
-  $("buttons").click(function(){
-    $("#test1").show();
+  $("#show").click(function(){
+    $("#test1").hide(); // Hide the second paragraph
+    $("#test").show();  // Show the first paragraph
   });
 });
 </script>
@@ -20,10 +24,11 @@ $(document).ready(function(){
 
 <p>This is a paragraph.</p>
 <p id="test">This is another paragraph.</p>
-<p id="test1">This is another paragraph.</p>
+<p id="test1" style="display:none;">This paragraph will be shown when you click "Show".</p>
 
-<button id="button">hide</button>
-<button id="buttons">show</button>
+
+<button id="hide">hide</button>
+<button id="show">show</button>
 
 </body>
 </html>
