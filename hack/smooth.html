@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smooth Scroll Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 2000px; /* For scrollable content */
+        }
+        #section {
+            margin-top: 1000px;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+        }
+        a {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <a href="#section">Go to Section</a>
+    <div id="section">Target Section</div>
+
+    <script>
+        $(document).ready(function() {
+            $('a[href*="#"]').on('click', function(event) {
+                event.preventDefault();
+                $('html, body').animate({
+                    scrollTop: $($(this).attr('href')).offset().top
+                }, 500); // Adjust duration in milliseconds
+            });
+        });
+    </script>
+</body>
+</html>
