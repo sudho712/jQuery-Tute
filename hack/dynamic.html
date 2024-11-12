@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Styling with jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">Box</div>
+
+    <script>
+        $(document).ready(function() {
+            $(".box").css({
+                "background-color": "blue",
+                "width": "200px",
+                "height": "200px",
+                "color": "white",
+                "text-align": "center",
+                "line-height": "200px" // Centers text vertically
+            });
+        });
+    </script>
+</body>
+</html>
